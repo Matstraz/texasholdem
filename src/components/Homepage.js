@@ -29,9 +29,19 @@ export default function Homepage({ deck }) {
   }
 
   function generateCommonCards() {
-    const randomCard = Math.floor(Math.random() * iterableDeck.length);
-    progressiveCommonCards.push(iterableDeck[randomCard]);
-    iterableDeck.splice(randomCard, 1);
+    if (commonCards.length < 3) {
+      for (let i = 0; i < 3; i++) {
+        const randomCard = Math.floor(
+          Math.random() * (iterableDeck.length - i)
+        );
+        progressiveCommonCards.push(iterableDeck[randomCard]);
+        iterableDeck.splice(randomCard, 1);
+      }
+    } else {
+      const randomCard = Math.floor(Math.random() * iterableDeck.length);
+      progressiveCommonCards.push(iterableDeck[randomCard]);
+      iterableDeck.splice(randomCard, 1);
+    }
 
     setCommonCards([...commonCards, ...progressiveCommonCards]);
   }
@@ -47,7 +57,6 @@ export default function Homepage({ deck }) {
       ...opponentHand,
       ...commonCards,
     ]);
-    console.log(iterableDeck);
   }
 
   return (

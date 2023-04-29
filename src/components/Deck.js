@@ -50,6 +50,7 @@ import aS from "../assets/cards/AS.png";
 import aC from "../assets/cards/AC.png";
 import aD from "../assets/cards/AD.png";
 import aH from "../assets/cards/AH.png";
+import cardBack from "../assets/cards/BACKY.png";
 
 const deck = [
   [twoS, "2S"],
@@ -106,4 +107,6 @@ const deck = [
   [aH, "AH"],
 ];
 
-export default deck;
+const back = cardBack;
+
+export { deck, back };

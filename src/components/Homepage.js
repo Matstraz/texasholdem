@@ -1,11 +1,14 @@
 import { useState } from "react";
+import Buttons from "./Buttons";
+import Money from "./Money";
 
-export default function Homepage({ deck }) {
+export default function Homepage({ deck, back }) {
   const [iterableDeck, setIterableDeck] = useState(deck);
   const [myHand, setMyHand] = useState([]);
   const [opponentHand, setOpponentHand] = useState([]);
   const [commonCards, setCommonCards] = useState([]);
   const [disappear, setDisappear] = useState(false);
+  const [showCard, setShowCards] = useState(false);
 
   let myIntialHand = [];
   let opponentInitialHand = [];
@@ -37,6 +40,9 @@ export default function Homepage({ deck }) {
         progressiveCommonCards.push(iterableDeck[randomCard]);
         iterableDeck.splice(randomCard, 1);
       }
+      //THIS IS THE FUNCTION TO SHOW OPPONENT'S HAND
+    } else if (commonCards.length === 5) {
+      setShowCards(true);
     } else {
       const randomCard = Math.floor(Math.random() * iterableDeck.length);
       progressiveCommonCards.push(iterableDeck[randomCard]);
@@ -60,11 +66,27 @@ export default function Homepage({ deck }) {
   }
 
   return (
-    <div className="flex flex-col justify-between items-center bg-green-600 p-5 w-11/12 h-5/6">
+    <div className="flex flex-col justify-between items-center bg-green-600 p-5 w-11/12 h-5/6 relative">
+      <Money />
       <div className="flex justify-center items-center w-full h-1/4">
-        {opponentHand.map((el) => (
-          <img src={el[0]} key={el[1]} alt="cardImage" className="h-full" />
-        ))}
+        {showCard &&
+          opponentHand.map((el) => (
+            <img src={el[0]} key={el[1]} alt="cardImage" className="h-full" />
+          ))}
+        {!showCard && (
+          <img
+            src={back}
+            alt="cardImage"
+            className={disappear ? "h-full" : "hidden"}
+          />
+        )}
+        {!showCard && (
+          <img
+            src={back}
+            alt="cardImage"
+            className={disappear ? "h-full" : "hidden"}
+          />
+        )}
       </div>
       <div className="flex justify-center items-center w-full h-1/4">
         {commonCards.map((el) => (
@@ -103,8 +125,9 @@ export default function Homepage({ deck }) {
             : "hidden"
         }
       >
-        RESET
+        NEW HAND
       </button>
+      <Buttons />
     </div>
   );
 }

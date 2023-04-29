@@ -4,7 +4,7 @@
 - carte coperte oppo fino al 'fold' o a quando tutte le carte sono girate (dopo ultima bet)
 - add 'FOLD' button
 - add 'BET' button
-- add 'RAISE' button
+- add 'RAISE' button??
 - add 'CHECK' button
 - replace 'START' button with a 'NEW HAND' button
 - add game rules (hardest)

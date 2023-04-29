@@ -1,10 +1,10 @@
+import { back, deck } from "./components/Deck";
 import Homepage from "./components/Homepage";
-import deck from "./components/Deck";
 
 function App() {
   return (
     <div className="h-screen w-screen flex justify-center items-center bg-green-800">
-      <Homepage deck={deck} />
+      <Homepage deck={deck} back={back} />
     </div>
   );
 }

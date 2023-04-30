@@ -6,6 +6,7 @@ export default function Money() {
   let [myMoney, setMymoney] = useState(1000);
   let [yourMoney, seYourMoney] = useState(1000);
 
+  //SERIE DI INCREMENTO PROVVISORIA
   function potIncrementer() {
     setPot(pot + 30);
   }

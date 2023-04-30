@@ -1,11 +1,15 @@
-import { useState } from "react";
+//POT + POT INCREMENTER
 
-export default function Money() {
-  let [pot, setPot] = useState(0);
-  let [initialPot, setInitialPot] = useState(0);
-  let [myMoney, setMymoney] = useState(1000);
-  let [yourMoney, seYourMoney] = useState(1000);
-
+export default function Money({
+  pot,
+  setPot,
+  initialPot,
+  setInitialPot,
+  myMoney,
+  setMymoney,
+  yourMoney,
+  setYourMoney,
+}) {
   //SERIE DI INCREMENTO PROVVISORIA
   function potIncrementer() {
     setPot(pot + 30);
@@ -13,8 +17,17 @@ export default function Money() {
 
   function varyPot() {
     setInitialPot(pot);
-    setMymoney(myMoney - pot / 3);
-    seYourMoney(yourMoney - (pot / 3) * 2);
+    if (myMoney - pot / 3 <= 0) {
+      setMymoney(0);
+    } else {
+      setMymoney(myMoney - pot / 3);
+    }
+
+    if (yourMoney - (pot / 3) * 2 <= 0) {
+      setYourMoney(0);
+    } else {
+      setYourMoney(yourMoney - (pot / 3) * 2);
+    }
   }
 
   setInterval(potIncrementer, 3000);

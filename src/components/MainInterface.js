@@ -19,6 +19,8 @@ export default function MainInterface({
   myMoney,
   setMyMoney,
   pot,
+  handPot,
+  setHandPot,
 }) {
   let myIntialHand = [];
   let opponentInitialHand = [];
@@ -141,6 +143,8 @@ export default function MainInterface({
         myMoney={myMoney}
         setMyMoney={setMyMoney}
         pot={pot}
+        handPot={handPot}
+        setHandPot={setHandPot}
       />
     </div>
   );

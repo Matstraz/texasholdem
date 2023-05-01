@@ -7,6 +7,8 @@ export default function Homepage({
   setPot,
   initialPot,
   setInitialPot,
+  handPot,
+  setHandPot,
   myMoney,
   setMymoney,
   yourMoney,
@@ -35,6 +37,8 @@ export default function Homepage({
         setMymoney={setMymoney}
         yourMoney={yourMoney}
         setYourMoney={setYourMoney}
+        handPot={handPot}
+        setHandPot={setHandPot}
       />
       <MainInterface
         back={back}
@@ -55,6 +59,8 @@ export default function Homepage({
         myMoney={myMoney}
         setMymoney={setMymoney}
         pot={pot}
+        handPot={handPot}
+        setHandPot={setHandPot}
       />
     </div>
   );

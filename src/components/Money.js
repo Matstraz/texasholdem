@@ -5,6 +5,7 @@ export default function Money({
   setPot,
   initialPot,
   setInitialPot,
+  handPot,
   myMoney,
   setMymoney,
   yourMoney,
@@ -37,7 +38,12 @@ export default function Money({
       <div className="border-2 border-black p-1 px-3">
         Opponent Money : {yourMoney} $
       </div>
-      <div className="border-2 border-black p-1 px-3">Pot : {initialPot} $</div>
+      <div className="flex flex-col gap-2">
+        <div className="border-2 border-black p-1 px-3">
+          Blind : {initialPot} $
+        </div>
+        <div className="border-2 border-black p-1 px-3">Pot : {handPot} $</div>
+      </div>
       <div className="border-2 border-black p-1 px-3" onClick={varyPot}>
         Your Money : {myMoney} $
       </div>

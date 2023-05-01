@@ -1,10 +1,15 @@
 import { useState } from "react";
 
-export default function Buttons({ myMoney, pot }) {
-  let [betValue, setBetValue] = useState(10);
+export default function Buttons({ myMoney, pot, handPot, setHandPot }) {
+  let [betValue, setBetValue] = useState(pot);
 
   function handleValue(event) {
     setBetValue(event.target.value);
+  }
+
+  function handleBet(event) {
+    event.preventDefault();
+    setHandPot(betValue);
   }
 
   return (
@@ -29,7 +34,7 @@ export default function Buttons({ myMoney, pot }) {
         <button
           type="submit"
           className="border-2 border-slate-700 px-5 hover:bg-slate-600"
-          onClick={(event) => event.preventDefault()}
+          onClick={handleBet}
         >
           BET
         </button>

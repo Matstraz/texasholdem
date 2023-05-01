@@ -4,8 +4,9 @@ import Homepage from "./components/Homepage";
 
 function App() {
   //POT + POT INCREMENTER (MY MONEY COMPONENT)
-  let [pot, setPot] = useState(0);
+  let [pot, setPot] = useState(30);
   let [initialPot, setInitialPot] = useState(0);
+  let [handPot, setHandPot] = useState(0);
   let [myMoney, setMymoney] = useState(1000);
   let [yourMoney, setYourMoney] = useState(1000);
   //MAIN INTERFACE
@@ -25,6 +26,8 @@ function App() {
         setPot={setPot}
         initialPot={initialPot}
         setInitialPot={setInitialPot}
+        handPot={handPot}
+        setHandPot={setHandPot}
         myMoney={myMoney}
         setMymoney={setMymoney}
         yourMoney={yourMoney}

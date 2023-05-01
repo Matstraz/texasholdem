@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function Buttons({ myMoney, pot, handPot, setHandPot }) {
-  let [betValue, setBetValue] = useState(pot);
+export default function Buttons({ myMoney, blind, handPot, setHandPot }) {
+  let [betValue, setBetValue] = useState(blind);
 
   function handleValue(event) {
     setBetValue(event.target.value);
@@ -20,12 +20,12 @@ export default function Buttons({ myMoney, pot, handPot, setHandPot }) {
           value={betValue}
           onChange={handleValue}
           step={10}
-          min={pot}
+          min={blind}
           max={myMoney}
         />
         <input
           type="range"
-          min={pot}
+          min={blind}
           max={myMoney}
           step={10}
           value={betValue}

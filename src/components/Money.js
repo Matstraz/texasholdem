@@ -1,8 +1,10 @@
-//POT + POT INCREMENTER
+//blind + blind INCREMENTER
+
+import { useEffect } from "react";
 
 export default function Money({
-  pot,
-  setPot,
+  blind,
+  setBlind,
   initialPot,
   setInitialPot,
   handPot,
@@ -11,27 +13,40 @@ export default function Money({
   yourMoney,
   setYourMoney,
 }) {
+  //INITIAL BLIND SETTING
+
+  useEffect(() => {
+    setMymoney(myMoney - blind / 3);
+    setYourMoney(yourMoney - (blind / 3) * 2);
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    console.log("I Only run once (When the component gets mounted)");
+  }, []);
+
   //SERIE DI INCREMENTO PROVVISORIA
-  function potIncrementer() {
-    setPot(pot + 30);
+
+  function blindIncrementer() {
+    setBlind(blind + 30);
   }
 
-  function varyPot() {
-    setInitialPot(pot);
-    if (myMoney - pot / 3 <= 0) {
+  function varyBlind() {
+    setInitialPot(blind);
+    if (myMoney - blind / 3 <= 0) {
       setMymoney(0);
     } else {
-      setMymoney(myMoney - pot / 3);
+      setMymoney(myMoney - blind / 3);
     }
 
-    if (yourMoney - (pot / 3) * 2 <= 0) {
+    if (yourMoney - (blind / 3) * 2 <= 0) {
       setYourMoney(0);
     } else {
-      setYourMoney(yourMoney - (pot / 3) * 2);
+      setYourMoney(yourMoney - (blind / 3) * 2);
     }
   }
 
-  setInterval(potIncrementer, 3000);
+  setInterval(blindIncrementer, 3000);
 
   return (
     <div className="flex flex-col justify-between absolute p-1 px-3 left-5 top-0 py-5 h-full text-center">
@@ -44,7 +59,7 @@ export default function Money({
         </div>
         <div className="border-2 border-black p-1 px-3">Pot : {handPot} $</div>
       </div>
-      <div className="border-2 border-black p-1 px-3" onClick={varyPot}>
+      <div className="border-2 border-black p-1 px-3" onClick={varyBlind}>
         Your Money : {myMoney} $
       </div>
     </div>

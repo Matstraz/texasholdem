@@ -18,7 +18,7 @@ export default function MainInterface({
   setYourMoney,
   myMoney,
   setMyMoney,
-  pot,
+  blind,
   handPot,
   setHandPot,
 }) {
@@ -142,7 +142,7 @@ export default function MainInterface({
         setYourMoney={setYourMoney}
         myMoney={myMoney}
         setMyMoney={setMyMoney}
-        pot={pot}
+        blind={blind}
         handPot={handPot}
         setHandPot={setHandPot}
       />

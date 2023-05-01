@@ -3,9 +3,9 @@ import { back, deck } from "./components/Deck";
 import Homepage from "./components/Homepage";
 
 function App() {
-  //POT + POT INCREMENTER (MY MONEY COMPONENT)
-  let [pot, setPot] = useState(30);
-  let [initialPot, setInitialPot] = useState(0);
+  //blind + blind INCREMENTER (MY MONEY COMPONENT)
+  let [blind, setBlind] = useState(30);
+  let [initialPot, setInitialPot] = useState(30);
   let [handPot, setHandPot] = useState(0);
   let [myMoney, setMymoney] = useState(1000);
   let [yourMoney, setYourMoney] = useState(1000);
@@ -22,8 +22,8 @@ function App() {
       <Homepage
         deck={deck}
         back={back}
-        pot={pot}
-        setPot={setPot}
+        blind={blind}
+        setBlind={setBlind}
         initialPot={initialPot}
         setInitialPot={setInitialPot}
         handPot={handPot}

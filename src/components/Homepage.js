@@ -3,8 +3,8 @@ import MainInterface from "./MainInterface";
 
 export default function Homepage({
   back,
-  pot,
-  setPot,
+  blind,
+  setBlind,
   initialPot,
   setInitialPot,
   handPot,
@@ -29,8 +29,8 @@ export default function Homepage({
   return (
     <div className="bg-green-600 p-5 w-11/12 h-5/6 relative flex justify-center items-center">
       <Money
-        pot={pot}
-        setPot={setPot}
+        blind={blind}
+        setBlind={setBlind}
         initialPot={initialPot}
         setInitialPot={setInitialPot}
         myMoney={myMoney}
@@ -58,7 +58,7 @@ export default function Homepage({
         setYourMoney={setYourMoney}
         myMoney={myMoney}
         setMymoney={setMymoney}
-        pot={pot}
+        blind={blind}
         handPot={handPot}
         setHandPot={setHandPot}
       />

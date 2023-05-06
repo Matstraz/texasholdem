@@ -1,6 +1,13 @@
 import { useState } from "react";
 
-export default function Buttons({ myMoney, blind, handPot, setHandPot }) {
+export default function Buttons({
+  myMoney,
+  blind,
+  handPot,
+  setHandPot,
+  setMyMoney,
+  SetYourMoney,
+}) {
   let [betValue, setBetValue] = useState(blind);
 
   function handleValue(event) {
@@ -9,7 +16,9 @@ export default function Buttons({ myMoney, blind, handPot, setHandPot }) {
 
   function handleBet(event) {
     event.preventDefault();
-    setHandPot(betValue);
+    myMoney > 0 && setHandPot(handPot + Number(betValue));
+    myMoney > 0 && setMyMoney(myMoney - betValue);
+    myMoney <= betValue && setMyMoney(0);
   }
 
   return (
@@ -19,7 +28,7 @@ export default function Buttons({ myMoney, blind, handPot, setHandPot }) {
           type="number"
           value={betValue}
           onChange={handleValue}
-          step={10}
+          step={blind}
           min={blind}
           max={myMoney}
         />
@@ -27,7 +36,7 @@ export default function Buttons({ myMoney, blind, handPot, setHandPot }) {
           type="range"
           min={blind}
           max={myMoney}
-          step={10}
+          step={blind}
           value={betValue}
           onChange={handleValue}
         />

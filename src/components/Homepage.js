@@ -10,7 +10,7 @@ export default function Homepage({
   handPot,
   setHandPot,
   myMoney,
-  setMymoney,
+  setMyMoney,
   yourMoney,
   setYourMoney,
   iterableDeck,
@@ -34,7 +34,7 @@ export default function Homepage({
         initialPot={initialPot}
         setInitialPot={setInitialPot}
         myMoney={myMoney}
-        setMymoney={setMymoney}
+        setMyMoney={setMyMoney}
         yourMoney={yourMoney}
         setYourMoney={setYourMoney}
         handPot={handPot}
@@ -57,7 +57,7 @@ export default function Homepage({
         yourMoney={yourMoney}
         setYourMoney={setYourMoney}
         myMoney={myMoney}
-        setMymoney={setMymoney}
+        setMyMoney={setMyMoney}
         blind={blind}
         handPot={handPot}
         setHandPot={setHandPot}

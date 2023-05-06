@@ -7,7 +7,7 @@ function App() {
   let [blind, setBlind] = useState(30);
   let [initialPot, setInitialPot] = useState(30);
   let [handPot, setHandPot] = useState(0);
-  let [myMoney, setMymoney] = useState(1000);
+  let [myMoney, setMyMoney] = useState(1000);
   let [yourMoney, setYourMoney] = useState(1000);
   //MAIN INTERFACE
   const [iterableDeck, setIterableDeck] = useState(deck);
@@ -29,7 +29,7 @@ function App() {
         handPot={handPot}
         setHandPot={setHandPot}
         myMoney={myMoney}
-        setMymoney={setMymoney}
+        setMyMoney={setMyMoney}
         yourMoney={yourMoney}
         setYourMoney={setYourMoney}
         iterableDeck={iterableDeck}

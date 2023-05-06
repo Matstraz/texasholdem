@@ -9,14 +9,14 @@ export default function Money({
   setInitialPot,
   handPot,
   myMoney,
-  setMymoney,
+  setMyMoney,
   yourMoney,
   setYourMoney,
 }) {
   //INITIAL BLIND SETTING
 
   useEffect(() => {
-    setMymoney(myMoney - blind / 3);
+    setMyMoney(myMoney - blind / 3);
     setYourMoney(yourMoney - (blind / 3) * 2);
     // eslint-disable-next-line
   }, []);
@@ -31,12 +31,13 @@ export default function Money({
     setBlind(blind + 30);
   }
 
+  //QUESTO DEVE AVVENIRE AL CLICK DEL BOTTONE "NEW HAND"!!!!!!!!!!!!!!
   function varyBlind() {
     setInitialPot(blind);
     if (myMoney - blind / 3 <= 0) {
-      setMymoney(0);
+      setMyMoney(0);
     } else {
-      setMymoney(myMoney - blind / 3);
+      setMyMoney(myMoney - blind / 3);
     }
 
     if (yourMoney - (blind / 3) * 2 <= 0) {
